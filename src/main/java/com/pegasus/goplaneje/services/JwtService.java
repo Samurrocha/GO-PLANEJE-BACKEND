@@ -36,8 +36,10 @@ public class JwtService {
         return Jwts.builder()
                 .setSubject(user.getId().toString())
                 .claim("email", user.getEmail())
+                .claim("role", user.getRole().toString())
+                .claim("username", user.getUsername())
                 .setIssuedAt(new Date())
-                .setExpiration(Date.from(Instant.now().plus(5, ChronoUnit.MINUTES)))
+                .setExpiration(Date.from(Instant.now().plus(10, ChronoUnit.MINUTES)))
                 .signWith(secretKey, SignatureAlgorithm.HS256)
                 .compact();
 
