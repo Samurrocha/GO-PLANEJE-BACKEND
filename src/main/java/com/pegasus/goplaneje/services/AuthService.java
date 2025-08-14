@@ -17,6 +17,7 @@ import org.springframework.stereotype.Service;
 public class AuthService {
     private final UserRepository userRepository;
     private final JwtService jwtService;
+    private final RefreshTokenService refreshTokenService;
     private final PasswordEncoder passwordEncoder;
 
     public AuthResponseDTO login(LoginRequestDTO dto) {
@@ -31,7 +32,8 @@ public class AuthService {
         }
 
         return AuthResponseDTO.builder()
-                .token(jwtService.generateToken(user))
+                .acessToken(jwtService.generateToken(user))
+                .refreshToken(refreshTokenService.createRefreshToken(user))
                 .build();
 
     }

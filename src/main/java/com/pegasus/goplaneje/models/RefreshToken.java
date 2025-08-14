@@ -4,6 +4,7 @@ import javax.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
+import java.time.Instant;
 import java.util.UUID;
 import com.pegasus.goplaneje.models.User;
 
@@ -16,7 +17,7 @@ import com.pegasus.goplaneje.models.User;
 @Builder
 public class RefreshToken {
     @Id
-    @GeneratedValue(generator = 'UUID')
+    @GeneratedValue(generator = "UUID")
     @GenericGenerator(
             name = "UUID",
             strategy = "org.hibernate.id.UUIDGenerator"
@@ -27,7 +28,7 @@ public class RefreshToken {
     @Column(nullable = false, unique = true)
     private String token;
 
-    @OneToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     private User user;
 
     @Column(nullable = false)

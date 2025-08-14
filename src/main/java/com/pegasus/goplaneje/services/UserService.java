@@ -35,7 +35,7 @@ public class UserService {
 
         return UserResponseDTO.builder()
                 .username(savedUser.getUsername())
-                .id(savedUser.getId())
+                .id(savedUser.getId().toString())
                 .email(savedUser.getEmail())
                 .createdAt(savedUser.getCreatedAt())
                 .build();
@@ -52,7 +52,7 @@ public class UserService {
         return usersList
                 .stream()
                 .map(user -> UserResponseDTO.builder()
-                        .id(user.getId())
+                        .id(user.getId().toString())
                         .username(user.getUsername())
                         .email(user.getEmail())
                         .createdAt(user.getCreatedAt())

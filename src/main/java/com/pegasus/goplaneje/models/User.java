@@ -22,7 +22,7 @@ import java.util.UUID;
 @Builder
 public class User implements UserDetails {
     @Id
-    @GeneratedValue(generator = 'UUID')
+    @GeneratedValue(generator = "UUID")
     @GenericGenerator(
             name = "UUID",
             strategy = "org.hibernate.id.UUIDGenerator"
