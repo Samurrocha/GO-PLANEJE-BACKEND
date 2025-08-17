@@ -29,8 +29,9 @@ public class RefreshToken {
     private String token;
 
     @ManyToOne(fetch = FetchType.EAGER)
+
     private User user;
 
-    @Column(nullable = false)
+    @Column(nullable = false )
     private Instant expiryDate;
 }
