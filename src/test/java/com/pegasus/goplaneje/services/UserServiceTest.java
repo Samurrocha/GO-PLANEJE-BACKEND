@@ -48,7 +48,7 @@ class UserServiceTest {
                 .build();
 
         user = User.builder()
-                .id(1L)
+                .id(UUID.randomUUID())
                 .email(userRequestDTO.getEmail())
                 .password("hashedPassword")
                 .createdAt(LocalDateTime.now())
@@ -100,7 +100,7 @@ class UserServiceTest {
     @Test
     void shouldReturnUserList() {
         User user1 = User.builder()
-                .id(1L)
+                .id(UUID.randomUUID())
                 .email("samuel@example.com")
                 .username("samuel")
                 .password("encodedPassword")
@@ -109,7 +109,7 @@ class UserServiceTest {
                 .build();
 
         User user2 = User.builder()
-                .id(2L)
+                .id(UUID.randomUUID())
                 .email("samuel@example.com")
                 .username("samurrocha")
                 .password("encodedPassword")

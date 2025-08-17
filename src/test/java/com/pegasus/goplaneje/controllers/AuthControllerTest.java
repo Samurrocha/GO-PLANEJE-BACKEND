@@ -48,7 +48,7 @@ class AuthControllerTest {
     @DisplayName("Deve autenticar usuário com sucesso e retornar token")
     void loginUser_ComCredenciaisValidas_DeveRetornarToken() throws Exception {
         // Arrange;
-        AuthResponseDTO responseDto = new AuthResponseDTO("token-jwt");
+        AuthResponseDTO responseDto = new AuthResponseDTO("token-jwt", "a90uas80asdh");
 
         when(authService.login(any(LoginRequestDTO.class))).thenReturn(responseDto);
 

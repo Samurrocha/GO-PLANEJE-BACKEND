@@ -32,7 +32,6 @@ public class AuthController {
             return ResponseEntity.ok().body(refreshTokenService.refreshAccessToken(refreshToken));
         }
 
-
     }
 
 

@@ -4,14 +4,11 @@ import com.pegasus.goplaneje.enums.Role;
 import lombok.Builder;
 import lombok.Data;
 
-import java.time.LocalDateTime;
-
 @Builder
 @Data
-public class UserResponseDTO {
+public class UserUpdateResponseDTO {
     private String id;
     private String username;
     private String email;
     private Role role;
-    private LocalDateTime createdAt;
 }

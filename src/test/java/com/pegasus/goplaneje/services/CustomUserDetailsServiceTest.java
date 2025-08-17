@@ -16,6 +16,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
+import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
@@ -40,7 +41,7 @@ class CustomUserDetailsServiceTest {
                 .build();
 
         user = User.builder()
-                .id(1L)
+                .id(UUID.randomUUID())
                 .username(null)
                 .role(Role.COMMON)
                 .createdAt(LocalDateTime.now())
